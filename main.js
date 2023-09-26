@@ -9,22 +9,22 @@ btns.forEach(btn => {
     switch (btn.id) {
       case "left": // LEFT
         game.movePieceLeft()
-        view.renderPlayfield(game.getState())
+        view.render(game.getState())
         break;
 
       case "rotate": // UP
         game.rotatePiece()
-        view.renderPlayfield(game.getState())
+        view.render(game.getState())
         break;
 
       case "right": // RIGHT 
         game.movePieceRight()
-        view.renderPlayfield(game.getState())
+        view.render(game.getState())
         break;
 
       case "down": // DOWN
         game.movePieceDown()
-        view.renderPlayfield(game.getState())
+        view.render(game.getState())
         break;
     }
   }
@@ -36,7 +36,7 @@ btns.forEach(btn => {
 
 
 const game = new Game();
-const view = new View(root, 320, 640, 20, 10);
+const view = new View(root, 480, 640, 20, 10);
 
 window.game = game;
 window.view = view;
@@ -45,25 +45,24 @@ document.onkeydown = (e) => {
   switch (e.keyCode) {
     case 37: // LEFT
       game.movePieceLeft()
-      view.renderPlayfield(game.getState())
-      console.log(e.keyCode);
+      view.render(game.getState())
       break;
 
     case 38: // UP
       game.rotatePiece()
-      view.renderPlayfield(game.getState())
+      view.render(game.getState())
       break;
 
     case 39: // RIGHT 
       game.movePieceRight()
-      view.renderPlayfield(game.getState())
+      view.render(game.getState())
       break;
 
     case 40: // DOWN
       game.movePieceDown()
-      view.renderPlayfield(game.getState())
+      view.render(game.getState())
       break;
   }
 }
 
-view.renderPlayfield(game.getState())
+view.render(game.getState())
