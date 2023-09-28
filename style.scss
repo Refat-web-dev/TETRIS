@@ -93,6 +93,7 @@ h6 {
 }
 
 /*--------------------*/
+
 body {
     display: flex;
     flex-direction: column;
@@ -100,6 +101,10 @@ body {
     gap: 20px;
     background-color: black;
     padding: 20px;
+
+    h1 {
+        letter-spacing: -10px;
+    }
 }
 
 #root {
